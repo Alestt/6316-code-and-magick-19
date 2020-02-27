@@ -17,6 +17,11 @@
   var inputFireball = wizardFireball.querySelector('[name=fireball-color]');
   var setupClose = userSetup.querySelector('.setup-close');
   var setupUserName = userSetup.querySelector('.setup-user-name');
+  // начальное положение диалога редактирования
+  var setupOpenCoord = {
+    x: userSetup.style.top,
+    y: userSetup.style.left
+  };
 
   // меняет цвет заданного элемента
   var getElementColor = function (array, element, input) {
@@ -49,6 +54,8 @@
 
   // действия при открытии попапа
   var openPopup = function () {
+    userSetup.style.top = setupOpenCoord.x;
+    userSetup.style.left = setupOpenCoord.y;
     userSetup.classList.remove('hidden');
     document.addEventListener('keydown', onPopupEscPress);
     wizardCoat.addEventListener('click', onCoatClick);
