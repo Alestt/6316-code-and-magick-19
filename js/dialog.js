@@ -92,4 +92,8 @@
       userSetup.classList.add('hidden');
     }
   });
+
+  window.dialog = {
+    setupClose: closePopup,
+  };
 })();
